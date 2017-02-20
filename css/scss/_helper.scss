@@ -1,0 +1,450 @@
+// Extended variables
+
+$ban-primary: #dba752;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:300,400,700');
+
+@mixin generate-spacing-classes(
+	$default-space-amounts-with-direction: (5 top right bottom left t r b l, 10 top right bottom left t r b l, 15 top right bottom left t r b l, 20 top right bottom left t r b l, 25 top right bottom left t r b l, 30 top right bottom left t r b l, 35 top right bottom left t r b l, 40 top right bottom left t r b l, 45 top right bottom left t r b l, 50 top right bottom left t r b l)
+) {
+  @each $space in $default-space-amounts-with-direction {
+    .m#{nth($space, 6)}#{nth($space, 1)} {
+      margin-#{nth($space, 2)}: #{nth($space, 1)}px!important;
+    }
+    .m#{nth($space, 7)}#{nth($space, 1)} {
+      margin-#{nth($space, 3)}: #{nth($space, 1)}px!important;
+    }
+    .m#{nth($space, 8)}#{nth($space, 1)} {
+      margin-#{nth($space, 4)}: #{nth($space, 1)}px!important;
+    }
+    .m#{nth($space, 9)}#{nth($space, 1)} {
+      margin-#{nth($space, 5)}: #{nth($space, 1)}px!important;
+    }
+    .p#{nth($space, 6)}#{nth($space, 1)} {
+      padding-#{nth($space, 2)}: #{nth($space, 1)}px!important;
+    }
+    .p#{nth($space, 7)}#{nth($space, 1)} {
+      padding-#{nth($space, 3)}: #{nth($space, 1)}px!important;
+    }
+    .p#{nth($space, 8)}#{nth($space, 1)} {
+      padding-#{nth($space, 4)}: #{nth($space, 1)}px!important;
+    }
+    .p#{nth($space, 9)}#{nth($space, 1)} {
+      padding-#{nth($space, 5)}: #{nth($space, 1)}px!important;
+    }
+  }
+}
+
+@include generate-spacing-classes();
+
+.text-left-not-xs, .text-left-not-sm, .text-left-not-md, .text-left-not-lg {
+    text-align: left;
+}
+.text-center-not-xs, .text-center-not-sm, .text-center-not-md, .text-center-not-lg {
+    text-align: center;
+}
+.text-right-not-xs, .text-right-not-sm, .text-right-not-md, .text-right-not-lg {
+    text-align: right;
+}
+.text-justify-not-xs, .text-justify-not-sm, .text-justify-not-md, .text-justify-not-lg {
+    text-align: justify;
+}
+@include media-breakpoint-down(sm) {
+    .text-left-not-xs, .text-center-not-xs, .text-right-not-xs, .text-justify-not-xs {
+        text-align: inherit;
+    }
+    .text-left-xs {
+        text-align: left;
+    }
+    .text-center-xs {
+        text-align: center;
+    }
+    .text-right-xs {
+        text-align: right;
+    }
+   	.text-justify-xs {
+        text-align: justify;
+    }
+}
+@include media-breakpoint-down(md) {
+    .text-left-not-sm, .text-center-not-sm, .text-right-not-sm, .text-justify-not-sm {
+        text-align: inherit;
+    }
+    .text-left-sm {
+        text-align: left;
+    }
+    .text-center-sm {
+        text-align: center;
+    }
+    .text-right-sm {
+        text-align: right;
+    }
+    .text-justify-sm {
+        text-align: justify;
+    }
+}
+@include media-breakpoint-down(lg) {
+    .text-left-not-md, .text-center-not-md, .text-right-not-md, .text-justify-not-md {
+        text-align: inherit;
+    }
+    .text-left-md {
+        text-align: left;
+    }
+    .text-center-md {
+        text-align: center;
+    }
+    .text-right-md {
+        text-align: right;
+    }
+    .text-justify-md {
+        text-align: justify;
+    }
+}
+@include media-breakpoint-up(lg) {
+    .text-left-not-lg, .text-center-not-lg, .text-right-not-lg, .text-justify-not-lg {
+        text-align: inherit;
+    }
+    .text-left-lg {
+        text-align: left;
+    }
+    .text-center-lg {
+        text-align: center;
+    }
+    .text-right-lg {
+        text-align: right;
+    }
+    .text-justify-lg {
+        text-align: justify;
+    }
+}
+
+.no-padding {
+  padding: 0!important;
+}
+
+.no-margin {
+  margin: 0!important;
+}
+img {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+.container {
+	width: 100%;
+	max-width: 1030px;
+	padding: 0 30px;
+}
+header {
+	color: $brand-primary;
+	background: url('http://www.myproperty.ph/utilities/images/lamudi/header-01.jpg') no-repeat top center;
+	& .events-header {
+		padding: 80px 0 50px 0;
+	}
+}
+.btn {
+	font-size: 1em;
+	font-weight: 700;
+	text-transform: uppercase;
+	cursor: pointer;
+	&.broker-awards {
+		color: $red;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffa022+0,ffd77d+50,ffa022+100 */
+		background: #ffa022; /* Old browsers */
+		background: -moz-linear-gradient(left,  #ffa022 0%, #ffd77d 50%, #ffa022 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  #ffa022 0%,#ffd77d 50%,#ffa022 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  #ffa022 0%,#ffd77d 50%,#ffa022 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa022', endColorstr='#ffa022',GradientType=1 ); /* IE6-9 */
+		border: $orange 1px solid;
+	}
+	&:focus {
+		box-shadow: none;
+		opacity: 0.8;
+	}
+}
+
+.form-control {
+	border-radius: 0;
+	&:focus {
+		border-color: $gray-light;
+	}
+}
+
+.events {
+	font-size: 14px;
+	& .svg-ico {
+		&.left {
+			&.two-lines {
+				& .icon {
+					float: left;
+					width: 40px;
+					height: 60px;
+					margin-right: 10px;
+				}
+				& .label {
+					width: auto;
+				}
+			}
+		}
+	}
+	& .events-list {
+		&.successful {
+			& .el-images {
+				margin-left: -1px;
+				& img {
+					width: 100%;
+					padding: 1px;
+					object-fit: cover;
+				}
+				& .eli-left, .eli-right {
+					width: 50%;
+					float: left;
+				}
+			}
+		}
+	}
+	// Navbar
+	& .navbar {
+		background: $blue;
+		padding: 1rem;
+		& .navbar-nav {
+			width: 100%;
+		    flex-direction: row;
+			& li {
+				&:first-child {
+					& a {
+						padding-left: 0;
+					}
+				}
+				& .nav-link {
+					text-transform: uppercase;
+					color: rgba(255,255,255,1);
+					padding-right: 1rem;
+    				padding-left: 1rem;
+					&.active {
+						color: $brand-primary;
+					}
+				}
+			}
+		}
+	}
+	// Tabs
+	& .nav-tabs {
+		border: none;
+		& .nav-item {
+			margin: 0;
+			& .nav-link {
+				font-weight: 700;
+				text-transform: uppercase;
+				color: initial;
+				background: none;
+				padding: 1em 1.5em;
+				border: none;
+				&.active {
+					color: $brand-primary;
+					border-bottom: $brand-primary 2px solid;
+				}
+			}
+		}
+	}
+	//  Section
+	& section {
+		padding: 80px 0 80px 0;
+		&.gray {
+			background: $gray-lightest;
+		}
+		&.blue {
+			color: white;
+			background: $blue;
+		}
+		& .section-content {
+			padding: 30px 0 50px 0;
+			& .home-calendar {
+				padding: 40px 0;
+				border-top: $gray-lighter 1px solid;
+				@include media-breakpoint-down(sm) {
+					& {
+						padding: 0;
+						border: none;
+					}
+				}
+			}
+			& .hc-box {
+				display: table;
+				& .hc-date {
+					width: 60px;
+					display: table-cell;
+					& .icon {
+						width: 40px;
+    					margin: 0 auto;
+					}
+				}
+				& .hc-details {
+					display: table-cell;
+					vertical-align: top;
+					& .hcd-box {
+						& ul.hcd-highlights {
+							& li {
+								& .fa {
+									color: $blue;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.broker-awards-night {
+		background-color: black;
+		color: white;
+		position: relative;
+		&:before {
+			content: "";
+			background: url('http://www.myproperty.ph/utilities/images/lamudi/header-01.jpg') no-repeat bottom center;
+			width: 100%;
+			height: 700px;
+			-webkit-transform:rotate(-180deg);
+		    -moz-transform:rotate(-180deg);
+		    -ms-transform:rotate(-180deg);
+	     	o-transform:rotate(-180deg);
+	        transform:rotate(-180deg); 
+		    position: absolute;
+		    bottom: 0;
+		    z-index: 0;
+		}
+		& h4, h5 {
+			letter-spacing: 10px;
+		}
+		& a:not(.btn-primary) {
+			color: $red;
+		}
+		& header {
+			color: white;
+		}
+		& h5.ac-ttl {
+			font-weight: 700;
+			text-transform: uppercase;
+			color: white;
+			padding: 0.75rem 1rem;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7c1416+0,ad1f23+100 */
+			background: #7c1416; /* Old browsers */
+			background: -moz-linear-gradient(left,  #7c1416 0%, #ad1f23 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  #7c1416 0%,#ad1f23 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  #7c1416 0%,#ad1f23 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7c1416', endColorstr='#ad1f23',GradientType=1 ); /* IE6-9 */
+
+			border: #ffa022 2px solid;
+		}
+		& section {
+			padding: 30px 0 0 0;
+		}
+		& .navbar {
+			background: $ban-primary;
+			& .navbar-toggler {
+				cursor: pointer;
+			}
+			& .navbar-nav {
+				display: block;
+				& li {
+					display: inline-block;
+					& a {
+						font-weight: 700;
+						color: white;
+					}
+					&:first-child {
+						a {
+							padding-left: 1rem;
+						}
+					}
+				}
+			}
+			@include media-breakpoint-down(md) {
+				& .navbar-nav {
+					display: flex;
+					flex-direction: column;
+					& li {
+						& a {
+							padding: 1em 0;
+							padding-left: 0;
+						}
+						&:first-child {
+							& a {
+								padding-left: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		& .events-header {
+			padding: 80px 0 10px 0;
+			& .eh-welcome {
+				& .divider {
+					background: $ban-primary;
+					width: 100%;
+					max-width: 172px;
+					height: 1px;
+					margin: auto;
+				}
+			}
+			& .eh-quickinfo {
+				& .ehq-ico {
+					& svg {
+						width: 40px;
+						height: 40px;
+					}
+				}
+			}
+			& .eh-cta {
+				& .btn-primary {
+					color: $red;
+					/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffa022+0,ffd77d+50,ffa022+100 */
+					background: #ffa022; /* Old browsers */
+					background: -moz-linear-gradient(left,  #ffa022 0%, #ffd77d 50%, #ffa022 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(left,  #ffa022 0%,#ffd77d 50%,#ffa022 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to right,  #ffa022 0%,#ffd77d 50%,#ffa022 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa022', endColorstr='#ffa022',GradientType=1 ); /* IE6-9 */
+					padding: 1rem 4rem;
+					border: white 1px solid;
+					-webkit-box-shadow: 0px 4px 0px 1px rgba(174,94,33,1);
+					-moz-box-shadow: 0px 4px 0px 1px rgba(174,94,33,1);
+					box-shadow: 0px 4px 0px 1px rgba(174,94,33,1);
+				}
+			}
+		}
+		& .text-primary {
+			color: $ban-primary !important;
+		}
+		& .ea-box {
+			& ul {
+				& li {
+					border-bottom: $gray-dark 1px solid;
+					padding: 10px 0;
+					&:first-child {
+						& span {
+							color: $gray;
+						}
+					}
+				}
+			}
+		}
+	}
+	& .lamudi-tvc {
+		float: none;
+	    clear: both;
+	    width: 100%;
+	    position: relative;
+	    padding-bottom: 56.25%;
+	    height: 0;
+	    & iframe {
+	    	position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+	    }
+	}
+}
