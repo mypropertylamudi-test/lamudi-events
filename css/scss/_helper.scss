@@ -447,4 +447,11 @@ header {
 		    height: 100%;
 	    }
 	}
+	& .testimonials {
+		& img {
+			border-radius: 50%;
+		    -webkit-filter: grayscale(100%);
+		    filter: grayscale(100%);
+		}
+	}
 }
