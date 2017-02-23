@@ -92,7 +92,9 @@
 					<div class="col-sm-6">
 						<h4 class="text-uppercase no-margin"><strong>Send us a message</strong></h4>
 						<div class="section-content">
-							<form id="event_form">
+							<p class="alert alert-danger ec-error collapse"><strong>Error!</strong> Please fill up all the fields.</p>
+							<p class="alert alert-success ec-success collapse"><strong>Message sent!</strong> We'll contact you as soon as possible.</p>
+							<form id="event_form" action="" method="POST" target="no-target">
 							  <div class="form-group">
 							    <input type="text" class="form-control required form-control-danger" id="name" placeholder="Name">
 							  </div>
@@ -103,10 +105,11 @@
 							    <input type="text" class="form-control required form-control-danger" id="email_address" placeholder="Email Address">
 							  </div>
 							  <div class="form-group">
-							    <textarea class="form-control" id="exampleTextarea" rows="10" placeholder="Message"></textarea>
+							    <textarea class="form-control required form-control-danger" id="message" rows="10" placeholder="Message"></textarea>
 							  </div>
 							  <button type="submit" class="btn btn-primary" id="inquire_event">Submit</button>
 							</form>
+							<iframe src="#" id="no-target" name="no-target" style="visibility:hidden"></iframe>
 						</div>
 					</div>
 					<div class="col-sm-5 ml-auto">
@@ -167,19 +170,44 @@
 		</section>
 	</div>
 </body>
-<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="js/bootstrap4.0/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://mypropertylamudi-test.github.io/lamudi-events/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="https://mypropertylamudi-test.github.io/lamudi-events/js/bootstrap4.0/bootstrap.min.js"></script>
 <script type="text/javascript">
-		$("#inquire_event").click(function(){
-			$("#event_form").find("input.required").filter(function() {
-				if( $(this).val().length === 0 ) {
+	    $('#inquire_event').click(function(e) {
+	        var isValid = true;
+	        $('#event_form .required').each(function() {
+	            if ($.trim($(this).val()) === '') {
+	                isValid = false;
 					$(this).parent(".form-group").addClass('has-danger');
-				}
-				else {
+	            }
+	            else {
 					$(this).parent(".form-group").removeClass('has-danger');
-				}
-			});
-			return false;
-		});
+	            }
+	        });
+	        if (isValid == false)  {
+	        	$(".ec-success").hide();
+	        	$(".ec-error").show();
+	            e.preventDefault();
+	        }
+	        else {
+	        	$("#event_form").submit(function() {
+			        var name = encodeURIComponent($('#name').val());
+			        var contact_number = encodeURIComponent($('#contact_number').val());
+			        var email_address = encodeURIComponent($('#email_address').val());
+			        var message = encodeURIComponent($('#message').val());
+			        var gdoc_name = "entry.1138211209";
+			        var gdoc_contactnumber = "entry.458042927";
+			        var gdoc_emailaddress = "entry.1198203140";
+			        var gdoc_message = "entry.260051450";
+			        var baseURL = 'https://docs.google.com/a/myproperty.ph/forms/d/e/1FAIpQLSfiCCG7HBm3li5VJAA6GMwt2krC4z2n_28D3vZ3neo-qgJpAQ/formResponse?';
+			        var submitRef = '&submit=-7423121731186598702';
+			        var submitURL = (baseURL + gdoc_name + "=" + name + "&" + gdoc_contactnumber + "=" + contact_number + "&" + gdoc_emailaddress + "=" + email_address + "&" + gdoc_message + "=" + message + submitRef);
+			        console.log(submitURL);
+			        $(this)[0].action=submitURL;
+			        $(".ec-success").show();
+	        		$(".ec-error").hide();
+	        	});
+	        }
+	    });
 </script>
 </html>
