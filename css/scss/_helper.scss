@@ -138,6 +138,10 @@ img {
 	padding: 0 30px;
 }
 header {
+	display: none;
+}
+header.event-page {
+	display: block!important;
 	color: $brand-primary;
 	background: url('http://www.myproperty.ph/utilities/images/lamudi/header-01.jpg') no-repeat top center;
 	& .events-header {
@@ -172,7 +176,50 @@ header {
 	}
 }
 
+.breadcrumbs {
+	display: none;
+}
+
+.TopNav-body {
+	&.container {
+		padding: 15px 30px;
+	}
+	& .TopNav-newListing-button {
+		font-weight: 600;
+	}
+	& .TopNav-actions {
+		& ul {
+			margin: 0;
+		}
+	}
+	& .TopNav-logo {
+		top: 0;
+		vertical-align: bottom;
+	}
+}
+
+.footer-nav, footer {
+	&.container {
+		padding: 0 30px;
+	}
+}
+
+.TopNav-body, .social-links, .footer-nav, footer {
+	font-size: 12px;
+}
+
+.static-container {
+	max-width: none;
+	& header {
+		margin-bottom: 0;
+	}
+}
+
+
 .events {
+	& h3, h4 {
+		text-transform: initial;
+	}
 	font-size: 14px;
 	& .svg-ico {
 		&.left {
@@ -318,8 +365,13 @@ header {
 		& h4, h5 {
 			letter-spacing: 10px;
 		}
-		& a:not(.btn-primary) {
-			color: $red;
+		& a {
+			&:not(.btn-primary) {
+				color: $red;
+			}
+			&.btn-primary {
+				color: $brand-primary;
+			}
 		}
 		& header {
 			color: white;
