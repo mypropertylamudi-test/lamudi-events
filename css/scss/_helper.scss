@@ -140,7 +140,7 @@ img {
 header {
 	display: none;
 }
-header.event-page {
+header.events-page {
 	display: block!important;
 	color: $brand-primary;
 	background: url('http://www.myproperty.ph/utilities/images/lamudi/header-01.jpg') no-repeat top center;
@@ -368,9 +368,6 @@ header.event-page {
 		& a {
 			&:not(.btn-primary) {
 				color: $red;
-			}
-			&.btn-primary {
-				color: $brand-primary;
 			}
 		}
 		& header {
