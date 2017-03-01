@@ -176,7 +176,7 @@ header.events-page {
 	}
 }
 
-.breadcrumbs {
+.breadcrumb {
 	display: none;
 }
 
@@ -193,8 +193,10 @@ header.events-page {
 		}
 	}
 	& .TopNav-logo {
-		top: 0;
-		vertical-align: bottom;
+		& span {
+			top: 0;
+			vertical-align: bottom;
+		}
 	}
 }
 
