@@ -125,6 +125,7 @@ $ban-primary: #dba752;
 .no-margin {
   margin: 0!important;
 }
+
 img {
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
@@ -132,14 +133,17 @@ img {
     image-rendering: crisp-edges;
     -ms-interpolation-mode: nearest-neighbor;
 }
+
 .container {
 	width: 100%;
 	max-width: 1030px;
 	padding: 0 30px;
 }
+
 header {
 	display: none;
 }
+
 header.events-page {
 	display: block!important;
 	color: $brand-primary;
@@ -148,6 +152,13 @@ header.events-page {
 		padding: 80px 0 50px 0;
 	}
 }
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 .btn {
 	font-size: 1em;
 	font-weight: 700;
@@ -190,6 +201,11 @@ header.events-page {
 	& .TopNav-actions {
 		& ul {
 			margin: 0;
+			& li a.TopNav-action-link {
+				&:hover {
+					color: $brand-primary;
+				}
+			}
 		}
 	}
 	& .TopNav-logo {
