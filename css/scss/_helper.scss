@@ -205,6 +205,11 @@ a {
 				&:hover {
 					color: $brand-primary;
 				}
+				&.TopNav-newListing {
+					&:hover {
+						color: white;
+					}
+				}
 			}
 		}
 	}
