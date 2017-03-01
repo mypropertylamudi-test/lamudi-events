@@ -212,7 +212,7 @@ header.events-page {
 
 .static-container {
 	max-width: none;
-	& header {
+	& header, .static-content, .social-links ul {
 		margin-bottom: 0;
 	}
 }
