@@ -243,8 +243,10 @@ a {
 }
 
 .events {
-	& input {
-		padding: 10px;
+	& .form-group {
+		input {
+			padding: 10px;
+		}
 	}
 	& h3, h4 {
 		text-transform: initial;
