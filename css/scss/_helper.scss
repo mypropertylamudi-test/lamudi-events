@@ -236,6 +236,13 @@ a {
 	& header, .static-content {
 		margin-bottom: 0;
 	}
+	& .events {
+		& header.event-page {
+			& h1 {
+				font-size: 2em;	
+			}
+		}
+	}
 }
 
 .social-links ul {
