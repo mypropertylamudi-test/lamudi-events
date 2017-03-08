@@ -199,6 +199,9 @@ a {
 		font-weight: 600;
 	}
 	& .TopNav-actions {
+		& a:not([href]):not([tabindex]) {
+		    color: white;
+		}
 		& ul {
 			margin: 0;
 			& li a.TopNav-action-link {
@@ -541,4 +544,14 @@ a {
 		    filter: grayscale(100%);
 		}
 	}
+}
+
+
+@media (max-width: 60.625em) {
+	width: 100%;
+}
+
+@media (max-width: 46.875em) {
+	width: 100%;
+	padding: 0;
 }
