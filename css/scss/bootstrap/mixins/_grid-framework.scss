@@ -34,6 +34,8 @@
         max-width: 100%;
       }
       .col#{$infix}-auto {
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
         flex: 0 0 auto;
         width: auto;
       }

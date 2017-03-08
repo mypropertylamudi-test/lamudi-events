@@ -38,6 +38,8 @@
 }
 
 @mixin make-row($gutters: $grid-gutter-widths) {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
 
@@ -68,6 +70,8 @@
 }
 
 @mixin make-col($size, $columns: $grid-columns) {
+  -webkit-flex: 0 0 percentage($size / $columns);
+  -ms-flex: 0 0 percentage($size / $columns);
   flex: 0 0 percentage($size / $columns);
   // width: percentage($size / $columns);
   // Add a `max-width` to ensure content within each column does not blow out

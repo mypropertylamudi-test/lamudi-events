@@ -4,6 +4,8 @@
 // `<nav>`s or `<ul>`s.
 
 .nav {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   padding-left: 0;
   margin-bottom: 0;
@@ -92,6 +94,8 @@
 
 .nav-fill {
   .nav-item {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     text-align: center;
   }
@@ -99,6 +103,8 @@
 
 .nav-justified {
   .nav-item {
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
     flex: 1 1 100%;
     text-align: center;
   }
