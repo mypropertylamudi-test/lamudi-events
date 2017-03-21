@@ -235,6 +235,7 @@ a {
 }
 
 .static-container {
+	width: 100%;
 	max-width: none;
 	& header, .static-content {
 		margin-bottom: 0;
@@ -435,6 +436,9 @@ a {
 			background: $ban-primary;
 			& .navbar-toggler {
 				cursor: pointer;
+			}
+			& .navbar-toggleable-md>.container {
+			    padding: 0 30px;
 			}
 			& .navbar-nav {
 				display: block;
