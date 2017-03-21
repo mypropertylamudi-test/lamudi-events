@@ -237,6 +237,7 @@ a {
 .static-container {
 	width: 100%;
 	max-width: none;
+	padding: 0!important;
 	& header, .static-content {
 		margin-bottom: 0;
 	}
